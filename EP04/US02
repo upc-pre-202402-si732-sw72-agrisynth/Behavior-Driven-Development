@@ -1,0 +1,20 @@
+Feature: Visualizar Detalles de Terrenos
+  Como usuario,
+  Quiero visualizar los detalles de los terrenos
+  Para conocer si es que vale la pena adquirirlos mediante un alquiler o compra.
+
+  Scenario: Ingreso al entorno “Terreno”
+    Given el usuario se encuentra en la página principal
+    When el usuario da clic en “Terrenos”
+    Then se redirige al usuario al entorno “Terrenos”
+
+  Scenario: Elección de terreno con el buscador
+    Given el usuario se encuentra en el entorno “Terrenos”
+    When el usuario escribe en el buscador
+    And da clic en “Buscar”
+    Then aparecerán todos los terrenos que coincidan con lo escrito
+
+  Scenario: Detalles de Terreno
+    Given el usuario se encuentra en el entorno “Terrenos”
+    When el usuario selecciona un terreno
+    Then aparecerá la ventana “Detalles de Terreno”, indicando todos los detalles importantes del terreno en cuestión

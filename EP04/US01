@@ -1,0 +1,20 @@
+Feature: Visualizar Detalles de Maquinaria
+  Como usuario,
+  Quiero visualizar los detalles de las maquinarias
+  Para conocer si es que vale la pena adquirirlas mediante un alquiler o compra.
+
+  Scenario: Ingreso al entorno “Maquinaria”
+    Given el usuario se encuentra en la página principal
+    When el usuario da clic en “Maquinaria”
+    Then se redirige al usuario al entorno “Maquinarias”
+
+  Scenario: Elección de maquinaria con el buscador
+    Given el usuario se encuentra en el entorno “Maquinaria”
+    When el usuario escribe en el buscador
+    And da clic en “Buscar”
+    Then aparecerán todas las maquinarias que coincidan con lo escrito
+
+  Scenario: Detalles de Maquinaria
+    Given el usuario se encuentra en el entorno “Maquinaria”
+    When el usuario selecciona una maquinaria
+    Then aparecerá la ventana “Detalles de Maquinaria”, indicando todos los detalles importantes de la maquinaria en cuestión

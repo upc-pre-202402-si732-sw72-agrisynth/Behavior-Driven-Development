@@ -1,0 +1,21 @@
+Feature: Alquiler y Compra de Maquinaria o Terreno
+  Como usuario,
+  Quiero poder realizar los trámites necesarios para la compra o alquiler de maquinarias o terrenos a través de la página web
+  Para poder pagar desde cualquier parte del mundo.
+
+  Scenario: Ingreso al entorno “Trámite”
+    Given el usuario se encuentra en el entorno “Detalles de Terreno” o “Detalles de Maquinaria”
+    When el usuario hace clic en “Alquilar” o en “Comprar”
+    Then aparecerá la ventana “Trámite”
+
+  Scenario: Inicio de Trámite
+    Given el usuario se encuentra en el entorno “Trámite”
+    When el usuario llena todos los campos
+    And el usuario selecciona el botón “Iniciar Trámite”
+    Then aparecerá la ventana “Método de Pago”, indicando el procedimiento de pago para el trámite
+
+  Scenario: Método de Pago
+    Given el usuario se encuentra en la ventana “Método de pago”
+    And el usuario ha completado todos los campos obligatorios de la ventana
+    When el usuario da clic en “Confirmar”
+    Then se mostrará un mensaje de confirmación, indicando que el trámite se ha completado satisfactoriamente
